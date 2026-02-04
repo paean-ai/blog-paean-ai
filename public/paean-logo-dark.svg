@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 300 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pæan Combined Logo - Dark: Monochrome White -->
+  <!-- Use on dark backgrounds when monochrome is needed -->
+  
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&amp;display=swap');
+      .wordmark { font-family: 'Poppins', sans-serif; font-weight: 400; }
+    </style>
+  </defs>
+  
+  <!-- Symbol (scaled from 100x100 to 60x60) -->
+  <g transform="translate(10, 10) scale(0.6)">
+    <!-- Arch -->
+    <path
+      d="M16 90 V50 A34 34 0 0 1 84 50 V90"
+      stroke="#FFFFFF"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Ring -->
+    <circle cx="50" cy="50" r="14" stroke="#FFFFFF" stroke-width="12" />
+  </g>
+  
+  <!-- Wordmark -->
+  <text x="85" y="55" class="wordmark" font-size="42" fill="#FFFFFF">Pæan</text>
+  <text x="210" y="35" class="wordmark" font-size="16" fill="#FFFFFF">™</text>
+</svg>

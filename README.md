@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://paean.ai">
-    <img src="public/logo-light.svg" alt="Paean AI Logo" width="200" />
+    <img src="public/paean-logo-light.svg" alt="Paean AI Logo" width="200" />
   </a>
 </p>
 
