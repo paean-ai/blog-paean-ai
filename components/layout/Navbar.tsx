@@ -20,11 +20,8 @@ export function Navbar() {
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center">
-                            <span className="text-black font-bold text-sm">P</span>
-                        </div>
-                        <span className="font-semibold text-lg text-white group-hover:text-cyan-400 transition-colors">
-                            Paean Blog
+                        <span className="font-semibold text-xl text-white group-hover:text-cyan-400 transition-colors">
+                            Pæan<span className="text-cyan-500">™</span> <span className="text-gray-400 font-normal">Blog</span>
                         </span>
                     </Link>
 
