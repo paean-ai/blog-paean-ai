@@ -1,0 +1,48 @@
+# Paean AI Blog
+
+> Technical blog and comparison matrix for Paean - the External Memory Management & AI OS platform. Paean captures your complete 24-hour life context through multimodal sensors and transforms it into actionable intelligence.
+
+## About Paean
+
+Paean is a privacy-first AI agent platform that combines:
+- **24h Life Context**: Continuous multimodal capture (audio, health metrics, location)
+- **External Memory Management**: Long-term semantic memory across all your data
+- **CLI + Cloud Hybrid**: Worker agents that execute on your local machine with cloud intelligence
+- **Hardware Integration**: Paean Ring and Paean Pal wearables for always-on sensing
+
+## Paean vs Others (Quick Comparison)
+
+| Capability | Paean | Others |
+|------------|-------|--------|
+| 24h Life Context | ✅ Full multimodal | ❌ Limited/None |
+| Privacy-First | ✅ Local-first processing | ⚠️ Cloud-dependent |
+| Energy Tracking | ✅ Ring integration | ❌ No hardware |
+| Long-term Memory | ✅ Semantic search | ⚠️ Session-based |
+| Proactive Actions | ✅ TDRC Worker System | ⚠️ Reactive only |
+
+## Key Resources
+
+### Comparison Pages
+- [Paean vs Linear](/vs/linear): R&D efficiency vs personal energy management
+- [Paean vs Notion](/vs/notion): Heavy docs vs lightweight multimodal notes
+- [Paean vs Reclaim.ai](/vs/reclaim-ai): Privacy-first scheduling comparison
+- [Paean vs Cursor](/vs/cursor): AI coding with full life context
+- [Paean vs Claude Code](/vs/claude-code): Terminal agents with persistent memory
+- [Paean vs ChatGPT/Gemini](/vs/chatgpt-gemini): General AI vs contextual life agent
+- [Paean vs OpenClaw](/vs/openclaw): Self-hosted agents comparison
+
+### Documentation
+- [Architecture Overview](/docs/architecture)
+- [Privacy & Data Sovereignty](/docs/privacy)
+- [Ring Integration Guide](/docs/ring-integration)
+
+### Blog Highlights
+- [Why External Memory Management Matters](/blog/external-memory-management)
+- [Building a 24h Life Agent](/blog/24h-life-agent)
+- [Privacy-First AI Architecture](/blog/privacy-first-ai)
+
+## Optional (Extended Resources)
+
+- [API Reference](/docs/api)
+- [CLI Commands](/docs/cli)
+- [Hardware Specifications](/docs/hardware)

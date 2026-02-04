@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://blog.paean.ai/sitemap.xml
+
+# llms.txt for AI crawlers
+# See: https://blog.paean.ai/llms.txt
