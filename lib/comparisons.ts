@@ -526,6 +526,196 @@ export const comparisons: Record<string, ComparisonData> = {
         verdict:
             "Choose OpenClaw if you're technical and want full control through self-hosting. Choose Paean for a production-ready life agent with Ring hardware, mobile apps, and 24h automatic context capture.",
     },
+
+    paeanclaw: {
+        slug: "paeanclaw",
+        competitor: "OpenClaw & NanoClaw",
+        competitorUrl: "https://github.com/openclaw/openclaw",
+        tagline: "Ultra-Minimal Agent Runtime vs Feature-Rich Frameworks",
+        summary:
+            "PaeanClaw is a 365-line open-source agent runtime from the Paean ecosystem. While OpenClaw ships 420,000 lines with 60+ built-in tools, and NanoClaw runs 8,000 lines behind Docker containers, PaeanClaw takes a radically different approach: an entire agent runtime that fits inside a single LLM context window.",
+        paeanStrengths: [
+            "Entire 365-line codebase fits in one LLM context window for safe AI-assisted modification",
+            "Any OpenAI-compatible LLM provider — OpenAI, Claude, Gemini, Ollama, DeepSeek, or local models",
+            "Only 2 runtime dependencies — minimal supply-chain attack surface",
+            "20ms cold start on Bun with zero native addon compilation",
+            "MCP-only tool system — compose capabilities from the open MCP server ecosystem",
+            "Fork-and-customize economy: AI agents can read, modify, and maintain the entire codebase safely",
+        ],
+        features: [
+            {
+                name: "Core Source Lines",
+                paean: "365 lines (5 files)",
+                competitor: "OpenClaw: ~420,000 / NanoClaw: ~8,000",
+                paeanAdvantage: true,
+            },
+            {
+                name: "LLM Providers",
+                paean: "Any OpenAI-compatible API",
+                competitor: "OpenClaw: Pi multi-model / NanoClaw: Claude only",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Runtime Dependencies",
+                paean: "2 (MCP SDK + grammy)",
+                competitor: "OpenClaw: ~50 / NanoClaw: 9",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Cold Start",
+                paean: "~20ms (Bun)",
+                competitor: "OpenClaw: ~3s / NanoClaw: ~5s (container)",
+                paeanAdvantage: true,
+            },
+            {
+                name: "AI-Assisted Customization",
+                paean: "Trivial — full codebase in context",
+                competitor: "Challenging — partial context only",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Channel Coverage",
+                paean: "PWA + Telegram (+ skills)",
+                competitor: "OpenClaw: 16+ platforms natively",
+                paeanAdvantage: false,
+            },
+            {
+                name: "Built-in Tools",
+                paean: "0 (MCP ecosystem)",
+                competitor: "OpenClaw: 60+ / NanoClaw: 7 via SDK",
+                paeanAdvantage: false,
+            },
+            {
+                name: "Container Isolation",
+                paean: "None (host-level trust)",
+                competitor: "NanoClaw: Docker / Apple Container",
+                paeanAdvantage: false,
+            },
+        ],
+        faq: [
+            {
+                question:
+                    "Why does PaeanClaw have only 365 lines when OpenClaw has 420,000?",
+                answer:
+                    "PaeanClaw is designed for the agentic era where AI coding assistants modify and extend code. At 365 lines, the entire codebase fits within a single LLM context window (~4K tokens), meaning any AI assistant can read, understand, and safely modify the entire system. OpenClaw optimizes for feature completeness; PaeanClaw optimizes for comprehensibility and safe AI-driven customization.",
+            },
+            {
+                question:
+                    "Can PaeanClaw do everything OpenClaw does?",
+                answer:
+                    "Not out of the box. OpenClaw provides 60+ built-in tools, 16+ messaging platforms, and native apps. PaeanClaw provides a minimal core and relies on the MCP (Model Context Protocol) server ecosystem for capabilities. The trade-off is deliberate: compose exactly what you need rather than shipping everything by default.",
+            },
+            {
+                question:
+                    "Why should I choose PaeanClaw over NanoClaw?",
+                answer:
+                    "NanoClaw offers Docker-level isolation and is tightly integrated with the Claude Agent SDK, which is excellent if you use Claude exclusively. PaeanClaw offers provider freedom — use any OpenAI-compatible API including local models via Ollama — with zero native compilation on Bun and a ~20ms cold start. Choose based on whether you prioritize container isolation (NanoClaw) or provider flexibility and minimalism (PaeanClaw).",
+            },
+            {
+                question:
+                    "Is PaeanClaw secure without container isolation?",
+                answer:
+                    "PaeanClaw's security comes from simplicity rather than isolation. The entire 365-line codebase can be audited in 15 minutes. It has only 2 runtime dependencies, reducing supply-chain risk to near zero. For single-user local deployments, the attack surface is inherently smaller than a 420,000-line codebase behind a container.",
+            },
+        ],
+        verdict:
+            "Choose OpenClaw for maximum built-in features and broad platform support. Choose NanoClaw for container-isolated security with Claude. Choose PaeanClaw for an ultra-minimal, provider-agnostic agent runtime that you — or your AI coding assistant — can fully understand, modify, and own.",
+    },
+
+    genspark: {
+        slug: "genspark",
+        competitor: "Genspark",
+        competitorUrl: "https://genspark.ai",
+        tagline: "Local-First Ecosystem vs Cloud-Native Super Agent",
+        summary:
+            "Genspark is a cloud-native AI workspace built around its Mixture-of-Agents architecture and autonomous Super Agent. The Paean ecosystem takes the opposite stance: local-first processing, open-source components, hardware integration, and data ownership — without sacrificing agentic capability.",
+        paeanStrengths: [
+            "Local-first architecture — your data stays on your device, not in a third-party cloud",
+            "Open-source agent runtime (PaeanClaw) you can audit, fork, and customize",
+            "Hardware integration via Ring for biometric context no cloud service can replicate",
+            "Provider freedom — use any LLM, switch providers without lock-in",
+            "Persistent cross-session memory with semantic search across your entire history",
+            "Autonomous worker system with intelligent multi-executor routing (Internal, Claude, Gemini, Cursor)",
+        ],
+        features: [
+            {
+                name: "Architecture",
+                paean: "Local-first, selective cloud sync",
+                competitor: "Cloud-native Mixture-of-Agents",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Data Ownership",
+                paean: "Local SQLite, user-controlled",
+                competitor: "Cloud-stored, vendor-controlled",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Open Source",
+                paean: "PaeanClaw (MIT), CLI tools",
+                competitor: "Proprietary platform",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Hardware Integration",
+                paean: "Ring biometrics, Record Pen",
+                competitor: "No hardware integration",
+                paeanAdvantage: true,
+            },
+            {
+                name: "LLM Freedom",
+                paean: "Any provider, including local models",
+                competitor: "Bundled models (GPT-5, Claude, Gemini)",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Audio Intelligence",
+                paean: "Paean Moments: transcription + mind maps + voice Q&A",
+                competitor: "Speakly: voice dictation across apps",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Content Creation",
+                paean: "Developer-focused CLI workflows",
+                competitor: "Slides, video, music, image agents",
+                paeanAdvantage: false,
+            },
+            {
+                name: "No-Code Automation",
+                paean: "Requires technical setup",
+                competitor: "Natural language workflow builder",
+                paeanAdvantage: false,
+            },
+        ],
+        faq: [
+            {
+                question:
+                    "How does Paean compare to Genspark for daily productivity?",
+                answer:
+                    "Genspark excels at cloud-based content creation — slides, videos, email workflows — through its Super Agent. Paean focuses on capturing and structuring your real-world context through hardware (Ring, Record Pen) and local processing. If your productivity bottleneck is content generation, Genspark is strong. If it is context retention, energy optimization, and private knowledge management, Paean is purpose-built for that.",
+            },
+            {
+                question:
+                    "Is Paean's AI as capable as Genspark's Mixture-of-Agents?",
+                answer:
+                    "Genspark orchestrates multiple cloud models simultaneously for each query. Paean CLI routes tasks to specialized executors (Internal, Claude, Gemini, Cursor, Codex) based on task requirements. The key difference is where the intelligence runs: Genspark is entirely cloud-dependent, while Paean can operate locally with Ollama or mix local and cloud models as needed.",
+            },
+            {
+                question:
+                    "Why choose Paean over Genspark for voice and audio?",
+                answer:
+                    "Genspark's Speakly provides voice dictation across desktop apps. Paean Moments goes deeper: full audio recording, AI transcription, automatic mind map generation, speaker identification, and conversational voice Q&A over your recordings. For professionals who need to capture meetings and lectures and transform them into structured knowledge, Paean Moments offers a more comprehensive solution.",
+            },
+            {
+                question:
+                    "Can I self-host the Paean agent like PaeanClaw?",
+                answer:
+                    "Yes. PaeanClaw is a fully open-source, self-hostable agent runtime. Install it globally via npm or Bun, point it at any LLM provider, and run your own AI agent with MCP tools, a web PWA, and Telegram integration. Genspark has no self-hosted option — all processing runs on their cloud infrastructure.",
+            },
+        ],
+        verdict:
+            "Choose Genspark for a polished, cloud-native AI workspace with strong content creation tools and no-code automation. Choose the Paean ecosystem for local-first data ownership, open-source agent infrastructure, hardware-integrated context capture, and the ability to run your own agent without cloud dependency.",
+    },
 };
 
 export function getComparisonData(slug: string): ComparisonData | null {
