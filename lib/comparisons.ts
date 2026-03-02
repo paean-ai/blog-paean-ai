@@ -129,12 +129,6 @@ export const comparisons: Record<string, ComparisonData> = {
                 paeanAdvantage: true,
             },
             {
-                name: "Privacy",
-                paean: "Local-first processing",
-                competitor: "Cloud-dependent",
-                paeanAdvantage: true,
-            },
-            {
                 name: "Database Features",
                 paean: "Semantic search",
                 competitor: "Rich databases & views",
@@ -177,9 +171,9 @@ export const comparisons: Record<string, ComparisonData> = {
             "Reclaim.ai automates calendar scheduling based on tasks and habits. Paean goes deeper with Ring biometrics for true energy-aware scheduling and local-first privacy.",
         paeanStrengths: [
             "Ring biometrics for actual energy levels",
-            "Local-first processing - your data stays private",
             "24h context, not just calendar events",
             "Proactive agent actions, not just scheduling",
+            "Local-first data processing",
         ],
         features: [
             {
@@ -230,14 +224,9 @@ export const comparisons: Record<string, ComparisonData> = {
                 answer:
                     "Reclaim.ai has mature calendar scheduling algorithms. Paean's advantage is superior input data (Ring biometrics) and broader context (24h life). For pure scheduling features, Reclaim.ai is excellent; for energy-optimal scheduling, Paean wins.",
             },
-            {
-                question: "How does Paean handle privacy compared to Reclaim.ai?",
-                answer:
-                    "Paean processes your data locally first, with cloud sync only when needed and under your control. Reclaim.ai requires cloud processing. If privacy is a priority, Paean's architecture is significantly more private.",
-            },
         ],
         verdict:
-            "Choose Reclaim.ai for dedicated smart scheduling with mature calendar AI. Choose Paean for true energy-aware productivity with Ring biometrics and local-first privacy.",
+            "Choose Reclaim.ai for dedicated smart scheduling with mature calendar AI. Choose Paean for true energy-aware productivity with Ring biometrics and comprehensive life context.",
     },
 
     cursor: {
@@ -345,12 +334,6 @@ export const comparisons: Record<string, ComparisonData> = {
                 paeanAdvantage: true,
             },
             {
-                name: "Privacy",
-                paean: "Local-first architecture",
-                competitor: "Cloud processing",
-                paeanAdvantage: true,
-            },
-            {
                 name: "Agentic Capability",
                 paean: "TDRC worker system",
                 competitor: "Excellent agentic coding",
@@ -416,12 +399,6 @@ export const comparisons: Record<string, ComparisonData> = {
                 paeanAdvantage: true,
             },
             {
-                name: "Privacy",
-                paean: "Local-first processing",
-                competitor: "Cloud-dependent",
-                paeanAdvantage: true,
-            },
-            {
                 name: "General Knowledge",
                 paean: "Focused on your context",
                 competitor: "Broad world knowledge",
@@ -461,18 +438,18 @@ export const comparisons: Record<string, ComparisonData> = {
         competitorUrl: "https://openclaw.ai",
         tagline: "Self-Hosted Agents vs Production-Ready Platform",
         summary:
-            "OpenClaw is an open-source self-hosted AI agent. Paean offers a production-ready platform with mobile apps, Ring hardware, and enterprise-grade security while maintaining privacy-first principles.",
+            "OpenClaw is an open-source self-hosted AI agent with 420,000+ lines. Paean offers a production-ready platform with native mobile apps, Ring hardware, and PaeanClaw — a 365-line open-source runtime that starts 150x faster.",
         paeanStrengths: [
             "Production-ready with native mobile apps",
             "Ring hardware for biometric context",
-            "Enterprise security without sacrificing privacy",
+            "PaeanClaw: 150x faster startup, 5x less memory than OpenClaw",
             "24h automatic context capture",
         ],
         features: [
             {
                 name: "Setup",
                 paean: "Production-ready, instant",
-                competitor: "Self-hosted, DIY",
+                competitor: "Self-hosted, DIY (~30 min)",
                 paeanAdvantage: true,
             },
             {
@@ -494,8 +471,14 @@ export const comparisons: Record<string, ComparisonData> = {
                 paeanAdvantage: true,
             },
             {
+                name: "Agent Runtime",
+                paean: "PaeanClaw: 365 lines, ~20ms startup",
+                competitor: "~420,000 lines, ~3s startup",
+                paeanAdvantage: true,
+            },
+            {
                 name: "Open Source",
-                paean: "Selective components",
+                paean: "Selective components (PaeanClaw MIT)",
                 competitor: "Fully open source",
                 paeanAdvantage: false,
             },
@@ -513,18 +496,18 @@ export const comparisons: Record<string, ComparisonData> = {
                     "OpenClaw requires technical setup and maintenance. Paean is production-ready with native apps, Ring hardware, and 24h automatic context capture. If you want a working life agent today, Paean delivers immediately.",
             },
             {
-                question: "Is OpenClaw more private than Paean?",
+                question: "How does PaeanClaw compare to OpenClaw technically?",
                 answer:
-                    "OpenClaw's full self-hosting can be more private if configured correctly. Paean's local-first architecture with selective cloud sync offers strong privacy with much less complexity. For most users, Paean's privacy is sufficient and far more practical.",
+                    "PaeanClaw starts in ~20ms (vs OpenClaw's ~3s), uses ~30MB RAM (vs ~150MB), installs in ~5s (vs ~5 min), and has 2 dependencies (vs ~50). The entire 365-line codebase fits in one LLM context window for safe AI-assisted customization.",
             },
             {
                 question: "Can I modify Paean like I can modify OpenClaw?",
                 answer:
-                    "Paean's CLI and worker system are extensible. While not fully open source, Paean offers customization through its MCP (Model Context Protocol) integrations and TDRC worker system.",
+                    "PaeanClaw is fully MIT-licensed and designed to be forked. At 365 lines, any AI coding assistant can read, understand, and modify the entire codebase. Paean also offers customization through MCP integrations and TDRC worker system.",
             },
         ],
         verdict:
-            "Choose OpenClaw if you're technical and want full control through self-hosting. Choose Paean for a production-ready life agent with Ring hardware, mobile apps, and 24h automatic context capture.",
+            "Choose OpenClaw if you're technical and want full control through self-hosting with 60+ built-in tools. Choose Paean for a production-ready life agent with Ring hardware, mobile apps, 24h context capture, and PaeanClaw's 150x faster agent runtime.",
     },
 
     paeanclaw: {
@@ -533,16 +516,58 @@ export const comparisons: Record<string, ComparisonData> = {
         competitorUrl: "https://github.com/openclaw/openclaw",
         tagline: "Ultra-Minimal Agent Runtime vs Feature-Rich Frameworks",
         summary:
-            "PaeanClaw is a 365-line open-source agent runtime from the Paean ecosystem. While OpenClaw ships 420,000 lines with 60+ built-in tools, and NanoClaw runs 8,000 lines behind Docker containers, PaeanClaw takes a radically different approach: an entire agent runtime that fits inside a single LLM context window.",
+            "PaeanClaw is a 365-line open-source agent runtime from the Paean ecosystem. While OpenClaw ships 420,000 lines with 60+ built-in tools, and NanoClaw runs 8,000 lines behind Docker containers, PaeanClaw takes a radically different approach: an entire agent runtime that fits inside a single LLM context window — with 150x faster startup and 5x less memory.",
         paeanStrengths: [
-            "Entire 365-line codebase fits in one LLM context window for safe AI-assisted modification",
+            "150x faster cold start than OpenClaw (~20ms vs ~3s on Bun)",
+            "5x lower memory footprint (~30MB vs ~150MB)",
+            "60x faster install (~5s vs ~5min) — zero native compilation",
+            "Only 2 runtime dependencies vs ~50 for OpenClaw",
             "Any OpenAI-compatible LLM provider — OpenAI, Claude, Gemini, Ollama, DeepSeek, or local models",
-            "Only 2 runtime dependencies — minimal supply-chain attack surface",
-            "20ms cold start on Bun with zero native addon compilation",
-            "MCP-only tool system — compose capabilities from the open MCP server ecosystem",
-            "Fork-and-customize economy: AI agents can read, modify, and maintain the entire codebase safely",
+            "Entire 365-line codebase fits in one LLM context window for safe AI-assisted customization",
         ],
         features: [
+            {
+                name: "Cold Start",
+                paean: "~20ms (Bun) / ~40ms (Node)",
+                competitor: "OpenClaw: ~3s / NanoClaw: ~5s (container)",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Memory Baseline (RSS)",
+                paean: "~30MB (Bun)",
+                competitor: "OpenClaw: ~150MB / NanoClaw: ~200MB",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Install Time",
+                paean: "~5s (zero native compile)",
+                competitor: "OpenClaw: ~5 min / NanoClaw: ~2 min",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Dist Size",
+                paean: "~0.8MB source",
+                competitor: "OpenClaw: ~28MB / NanoClaw: ~4MB",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Runtime Dependencies",
+                paean: "2 (MCP SDK + grammy)",
+                competitor: "OpenClaw: ~50 / NanoClaw: 9",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Native Addons",
+                paean: "0 (Bun) — no node-gyp, no C++ compiler",
+                competitor: "OpenClaw: Several / NanoClaw: 3+",
+                paeanAdvantage: true,
+            },
+            {
+                name: "Deployment Cost",
+                paean: "$0 — runs on any hardware incl. Raspberry Pi",
+                competitor: "OpenClaw: ~$20+/mo / NanoClaw: ~$5/mo",
+                paeanAdvantage: true,
+            },
             {
                 name: "Core Source Lines",
                 paean: "365 lines (5 files)",
@@ -553,18 +578,6 @@ export const comparisons: Record<string, ComparisonData> = {
                 name: "LLM Providers",
                 paean: "Any OpenAI-compatible API",
                 competitor: "OpenClaw: Pi multi-model / NanoClaw: Claude only",
-                paeanAdvantage: true,
-            },
-            {
-                name: "Runtime Dependencies",
-                paean: "2 (MCP SDK + grammy)",
-                competitor: "OpenClaw: ~50 / NanoClaw: 9",
-                paeanAdvantage: true,
-            },
-            {
-                name: "Cold Start",
-                paean: "~20ms (Bun)",
-                competitor: "OpenClaw: ~3s / NanoClaw: ~5s (container)",
                 paeanAdvantage: true,
             },
             {
@@ -585,14 +598,20 @@ export const comparisons: Record<string, ComparisonData> = {
                 competitor: "OpenClaw: 60+ / NanoClaw: 7 via SDK",
                 paeanAdvantage: false,
             },
-            {
-                name: "Container Isolation",
-                paean: "None (host-level trust)",
-                competitor: "NanoClaw: Docker / Apple Container",
-                paeanAdvantage: false,
-            },
         ],
         faq: [
+            {
+                question:
+                    "Why does PaeanClaw start 150x faster than OpenClaw?",
+                answer:
+                    "PaeanClaw is a single Bun/Node process with 2 dependencies and zero native addons. OpenClaw loads ~50 packages, initializes a plugin runtime, and spins up a gateway server. The ~20ms vs ~3s difference is the natural result of shipping 365 lines instead of 420,000.",
+            },
+            {
+                question:
+                    "Can PaeanClaw really run on a Raspberry Pi?",
+                answer:
+                    "Yes. PaeanClaw's ~30MB memory footprint and instant startup make it comfortable on any ARM board. All you need is Bun (or Node.js) and an LLM API key. OpenClaw's ~150MB baseline and heavy install process make it impractical on low-resource hardware.",
+            },
             {
                 question:
                     "Why does PaeanClaw have only 365 lines when OpenClaw has 420,000?",
@@ -601,25 +620,13 @@ export const comparisons: Record<string, ComparisonData> = {
             },
             {
                 question:
-                    "Can PaeanClaw do everything OpenClaw does?",
-                answer:
-                    "Not out of the box. OpenClaw provides 60+ built-in tools, 16+ messaging platforms, and native apps. PaeanClaw provides a minimal core and relies on the MCP (Model Context Protocol) server ecosystem for capabilities. The trade-off is deliberate: compose exactly what you need rather than shipping everything by default.",
-            },
-            {
-                question:
                     "Why should I choose PaeanClaw over NanoClaw?",
                 answer:
                     "NanoClaw offers Docker-level isolation and is tightly integrated with the Claude Agent SDK, which is excellent if you use Claude exclusively. PaeanClaw offers provider freedom — use any OpenAI-compatible API including local models via Ollama — with zero native compilation on Bun and a ~20ms cold start. Choose based on whether you prioritize container isolation (NanoClaw) or provider flexibility and minimalism (PaeanClaw).",
             },
-            {
-                question:
-                    "Is PaeanClaw secure without container isolation?",
-                answer:
-                    "PaeanClaw's security comes from simplicity rather than isolation. The entire 365-line codebase can be audited in 15 minutes. It has only 2 runtime dependencies, reducing supply-chain risk to near zero. For single-user local deployments, the attack surface is inherently smaller than a 420,000-line codebase behind a container.",
-            },
         ],
         verdict:
-            "Choose OpenClaw for maximum built-in features and broad platform support. Choose NanoClaw for container-isolated security with Claude. Choose PaeanClaw for an ultra-minimal, provider-agnostic agent runtime that you — or your AI coding assistant — can fully understand, modify, and own.",
+            "Choose OpenClaw for maximum built-in features and broad platform support. Choose NanoClaw for container-isolated agents with Claude. Choose PaeanClaw for an ultra-minimal, provider-agnostic agent runtime with 150x faster startup — one that you or your AI coding assistant can fully understand, modify, and own.",
     },
 
     genspark: {

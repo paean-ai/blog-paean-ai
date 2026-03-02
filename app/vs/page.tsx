@@ -61,15 +61,6 @@ export default function ComparisonsPage() {
                             </tr>
                             <tr className="border-b border-white/5">
                                 <td className="py-4 px-6 font-medium text-white">
-                                    Privacy-First
-                                </td>
-                                <td className="py-4 px-6 text-emerald-400">
-                                    ✅ Local-first processing
-                                </td>
-                                <td className="py-4 px-6 text-gray-500">⚠️ Cloud-dependent</td>
-                            </tr>
-                            <tr className="border-b border-white/5">
-                                <td className="py-4 px-6 font-medium text-white">
                                     Energy Tracking
                                 </td>
                                 <td className="py-4 px-6 text-emerald-400">
