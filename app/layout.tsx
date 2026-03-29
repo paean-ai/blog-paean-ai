@@ -3,6 +3,7 @@ import { Inter, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { OrganizationSchema } from "@/components/seo/JsonLd";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,32 +26,36 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://blog.paean.ai"),
   title: {
-    default: "Paean AI Blog - External Memory Management & AI OS",
+    default: "Paean AI Blog — Context-Aware Personal Intelligence",
     template: "%s | Paean AI Blog",
   },
   description:
-    "Technical blog and comparison matrix for Paean - the External Memory Management & AI OS platform. Capture your complete 24-hour life context and transform it into actionable intelligence.",
+    "Engineering insights on ambient AI, Digital Twins, agent economies, and the infrastructure powering context-aware personal intelligence. From the team building the human–AI symbiosis layer.",
   keywords: [
     "Paean AI",
-    "External Memory Management",
-    "AI OS",
-    "24h Life Agent",
-    "AI Assistant",
-    "Privacy-first AI",
+    "Digital Twin",
+    "AI Agent",
+    "Agent Economy",
+    "Ambient AI",
+    "Context-Aware AI",
     "Smart Ring",
-    "Life Context",
+    "AI Companion",
+    "Agent Store",
+    "MCP Protocol",
+    "Personal AI",
+    "Wearable AI",
   ],
   authors: [{ name: "Paean AI Team" }],
   creator: "Paean AI",
-  publisher: "Paean AI",
+  publisher: "A8E Group",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://blog.paean.ai",
     siteName: "Paean AI Blog",
-    title: "Paean AI Blog - External Memory Management & AI OS",
+    title: "Paean AI Blog — Context-Aware Personal Intelligence",
     description:
-      "Technical blog and comparison matrix for Paean - the privacy-first AI agent platform.",
+      "Engineering insights on ambient AI, Digital Twins, and the agent economy.",
     images: [
       {
         url: "/og-image.png",
@@ -63,7 +68,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Paean AI Blog",
-    description: "External Memory Management & AI OS",
+    description:
+      "Engineering insights on ambient AI, Digital Twins, and the agent economy.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -89,6 +95,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${outfit.variable} ${jetbrainsMono.variable} antialiased min-h-screen flex flex-col`}
       >
+        <OrganizationSchema />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

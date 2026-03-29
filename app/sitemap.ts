@@ -11,6 +11,8 @@ const comparisons = [
     "claude-code",
     "chatgpt-gemini",
     "openclaw",
+    "paeanclaw",
+    "genspark",
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

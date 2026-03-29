@@ -1,103 +1,149 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/content";
-import { Calendar, ArrowRight, Tag } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Blog - Paean AI Technical Insights",
+  title: "Blog - Paean AI",
+  description:
+    "Technical insights on ambient AI, Digital Twins, agent economies, and the infrastructure behind context-aware personal intelligence.",
+  openGraph: {
+    title: "Blog - Paean AI",
     description:
-        "Technical articles on external memory management, 24h life context, AI agents, and privacy-first architecture from the Paean team.",
-    openGraph: {
-        title: "Blog - Paean AI Technical Insights",
-        description:
-            "Technical articles on external memory management, 24h life context, and AI agents.",
-    },
+      "Technical insights on ambient AI, Digital Twins, and the agent economy.",
+  },
 };
 
 export default async function BlogPage() {
-    const posts = await getAllPosts();
+  const posts = await getAllPosts();
+  const featuredPost = posts.find((p) => p.featured) || posts[0];
+  const remainingPosts = posts.filter((p) => p.slug !== featuredPost?.slug);
 
-    return (
-        <div className="min-h-screen py-16">
-            <div className="container-width">
-                {/* Header */}
-                <div className="max-w-3xl mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6 font-[family-name:var(--font-outfit)]">
-                        <span className="text-gradient-brand">Technical Insights</span>
-                    </h1>
-                    <p className="text-lg text-gray-400">
-                        Explore the technology behind Paean's 24h life context capture,
-                        external memory management, and privacy-first AI architecture.
-                    </p>
+  return (
+    <div className="min-h-screen">
+      {/* Header */}
+      <section className="pt-20 pb-12 relative">
+        <div className="absolute inset-0 bg-radial-glow opacity-50" />
+        <div className="container-width relative">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium text-[var(--color-primary-400)] mb-3 tracking-wide uppercase">
+              Blog
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 font-[family-name:var(--font-outfit)] tracking-tight">
+              Ideas & Engineering
+            </h1>
+            <p className="text-lg text-[var(--foreground-secondary)] leading-relaxed">
+              How we think about ambient AI, Digital Twins, agent infrastructure,
+              and the systems that turn personal context into compounding
+              intelligence.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider-gradient" />
+
+      <div className="container-width py-16">
+        {/* Featured Post */}
+        {featuredPost && (
+          <Link
+            href={`/blog/${featuredPost.slug}`}
+            className="group block glass-panel-hover p-8 md:p-10 mb-12"
+          >
+            <div className="flex items-center gap-3 mb-5">
+              <span className="badge badge-cyan text-[10px]">Featured</span>
+              <time className="text-xs text-[var(--foreground-muted)]">
+                {new Date(featuredPost.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+            </div>
+
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-[var(--color-primary-400)] transition-colors font-[family-name:var(--font-outfit)] tracking-tight max-w-3xl">
+              {featuredPost.title}
+            </h2>
+
+            <p className="text-[var(--foreground-secondary)] mb-6 max-w-2xl leading-relaxed">
+              {featuredPost.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-6">
+              {featuredPost.tags.slice(0, 4).map((tag) => (
+                <span key={tag} className="badge">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <span className="inline-flex items-center gap-1 text-sm text-[var(--color-primary-400)] group-hover:gap-2 transition-all font-medium">
+              Read article
+              <ChevronRight className="w-4 h-4" />
+            </span>
+          </Link>
+        )}
+
+        {/* Posts Grid */}
+        {remainingPosts.length > 0 && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {remainingPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group glass-panel-hover p-6 flex flex-col"
+              >
+                <div className="flex items-center gap-3 text-xs text-[var(--foreground-muted)] mb-4">
+                  <time>
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </time>
                 </div>
 
-                {/* Posts Grid */}
-                {posts.length > 0 ? (
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {posts.map((post) => (
-                            <Link
-                                key={post.slug}
-                                href={`/blog/${post.slug}`}
-                                className="group flex flex-col p-6 rounded-xl glass-panel hover:bg-white/5 transition-colors"
-                            >
-                                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                                    <span className="flex items-center gap-1">
-                                        <Calendar className="w-4 h-4" />
-                                        {new Date(post.date).toLocaleDateString("en-US", {
-                                            year: "numeric",
-                                            month: "short",
-                                            day: "numeric",
-                                        })}
-                                    </span>
-                                    {post.featured && (
-                                        <span className="px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 text-xs">
-                                            Featured
-                                        </span>
-                                    )}
-                                </div>
+                <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-[var(--color-primary-400)] transition-colors flex-1 leading-snug">
+                  {post.title}
+                </h3>
 
-                                <h2 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-400 transition-colors flex-1">
-                                    {post.title}
-                                </h2>
+                <p className="text-sm text-[var(--foreground-secondary)] mb-4 line-clamp-2">
+                  {post.description}
+                </p>
 
-                                <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-                                    {post.description}
-                                </p>
-
-                                {post.tags.length > 0 && (
-                                    <div className="flex flex-wrap gap-2 mb-4">
-                                        {post.tags.slice(0, 3).map((tag) => (
-                                            <span
-                                                key={tag}
-                                                className="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400"
-                                            >
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-                                )}
-
-                                <span className="flex items-center gap-1 text-sm text-cyan-400 group-hover:gap-2 transition-all">
-                                    Read more
-                                    <ArrowRight className="w-4 h-4" />
-                                </span>
-                            </Link>
-                        ))}
-                    </div>
-                ) : (
-                    <div className="text-center py-16">
-                        <p className="text-gray-400 mb-4">
-                            No posts yet. Check back soon for technical insights!
-                        </p>
-                        <Link
-                            href="/"
-                            className="text-cyan-400 hover:text-cyan-300 transition-colors"
-                        >
-                            Return to Home
-                        </Link>
-                    </div>
+                {post.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {post.tags.slice(0, 2).map((tag) => (
+                      <span key={tag} className="badge text-[10px]">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 )}
-            </div>
-        </div>
-    );
+
+                <span className="flex items-center gap-1 text-sm text-[var(--color-primary-400)] opacity-0 group-hover:opacity-100 transition-opacity mt-auto">
+                  Read more
+                  <ChevronRight className="w-4 h-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {posts.length === 0 && (
+          <div className="text-center py-24">
+            <p className="text-[var(--foreground-secondary)] mb-4">
+              No posts yet. Check back soon.
+            </p>
+            <Link
+              href="/"
+              className="text-[var(--color-primary-400)] hover:text-[var(--color-primary-300)] transition-colors text-sm"
+            >
+              Return to Home
+            </Link>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
